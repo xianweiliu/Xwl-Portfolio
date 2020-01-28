@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto Mono", monospace;
+    background-color: #0a1930;
+}
+
+#main-nav {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #0a1930;
+    line-height: 2.5;
+    color: #bdc3c7;
+    box-shadow: 2px -8px 25px #000;
+}
+#main-nav h2 {
+    color: #4eb19e;
+}
+
+.sub-nav {
+    list-style: none;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 9px;
+    vertical-align: bottom;
+}
+
+.sub-nav li {
+    /* background-color: blueviolet; */
+    font-weight: bold;
+    height: 70%;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.animatedBtn {
+    margin-top: 10px;
+    width: 100px;
+    height: 40px;
+    background: none;
+    border: 2px solid;
+    color: #4eb19e;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    outline: none;
+}
+
+.animatedBtn::before,
+.animatedBtn::after {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 5px;
+    background: #0a1930;
+    transform: skewX(50deg);
+    transition: 0.4s linear;
+}
+
+.animatedBtn::before {
+    top: -4px;
+    left: 10%;
+}
+
+.animatedBtn::after {
+    bottom: -4px;
+    right: 10%;
+}
+
+.animatedBtn:hover::before {
+    left: 80%;
+}
+
+.animatedBtn:hover::after {
+    right: 80%;
+}
+
+/* section content */
+
+section {
+    height: 800px;
+    max-height: 900px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    line-height: 2;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+}
+
+.content h1 {
+    font-size: 1em;
+    color: #4eb19e;
+}
+.intro span {
+    font-size: 4em;
+    margin-left: 20px;
+    color: black;
+    animation: textColor 2.5s ease forwards;
+}
+
+@keyframes textColor {
+    100% {
+        text-shadow: 2px 2px #4eb19e;
+    }
+}
+
+.content .qoute {
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.7);
+    animation: fontSize 2s ease forwards;
+}
+
+@keyframes fontSize {
+    100% {
+        font-size: 3em;
+    }
+}
+.moreBtn {
+    width: 150px;
+    height: 50px;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+/* about me */
+
+.aboutContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.aboutContent p,
+.aboutContent ul {
+    font-size: 20px;
+    color: #636e72;
+}
+
+.aboutContent span {
+    color: #ff6348;
+}
+.aboutContent span a {
+    color: inherit;
+    text-decoration: none;
+}
+.aboutContent span a:visited {
+    color: none;
+}
+
+.aboutContent p {
+    text-indent: 50px;
+}
+
+.aboutMe {
+    width: 40%;
+}
+
+.descTitle {
+    font-size: 2rem;
+    width: 40%;
+    height: 15%;
+    color: rgba(255, 255, 255, 1);
+}
+.descTitle h3 {
+    background-image: linear-gradient(120deg, #4eb19e 100%, #4eb19e 100%);
+    background-repeat: no-repeat;
+    background-size: 60% 19%;
+    background-position: 9px 72%;
+}
+
+#special {
+    background-size: 45% 19%;
+}
+
+.skills ul {
+    list-style: none;
+}
+
+.skills li i {
+    margin-right: 20px;
+    color: #4eb19e;
+    vertical-align: middle;
+}
