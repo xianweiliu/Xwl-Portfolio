@@ -9,12 +9,29 @@ body {
     background-color: #0a1930;
 }
 
+/* nav style */
+
+.burger {
+    display: none;
+    width: 50px;
+    height: 50px;
+}
+
+.burger .line {
+    width: 45px;
+    height: 5px;
+    background-color: #4eb19e;
+    margin: 9px 2px;
+    transition: all 0.3s ease;
+}
+
 #main-nav {
     position: fixed;
     display: flex;
     width: 100%;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     background-color: #0a1930;
     line-height: 2.5;
     color: #bdc3c7;
@@ -26,15 +43,15 @@ body {
 
 .sub-nav {
     list-style: none;
-    width: 30%;
+    width: 40%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 9px;
     vertical-align: bottom;
 }
 
 .sub-nav li {
-    /* background-color: blueviolet; */
     font-weight: bold;
     height: 70%;
     text-transform: uppercase;
@@ -42,9 +59,8 @@ body {
 }
 
 .animatedBtn {
-    margin-top: 10px;
     width: 100px;
-    height: 40px;
+    height: 30px;
     background: none;
     border: 2px solid;
     color: #4eb19e;
@@ -84,6 +100,75 @@ body {
 .animatedBtn:hover::after {
     right: 80%;
 }
+/* when screen width is less or equal to 1024px */
+@media screen and (max-width: 1024px) {
+    #main-nav {
+        line-height: 3;
+    }
+    .sub-nav {
+        width: 50%;
+    }
+}
+/* when screen width is less or equal to 710px */
+
+@media screen and (max-width: 710px) {
+    body {
+        overflow-y: hidden;
+    }
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+    .sub-nav {
+        position: absolute;
+        right: 0px;
+        height: 30vh;
+        width: 50%;
+        top: 8vh;
+        background-color: #0a1930;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 2px 2px #000;
+        border-radius: 3px;
+        align-items: center;
+        transform: translateX(100%);
+    }
+
+    .sub-nav li {
+        opacity: 0;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+.sub-links-fade {
+    animation: navLiFade 0.5s ease forwards;
+}
+
+@keyframes navLiFade {
+    from {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line:nth-child(1) {
+    transform: rotate(-45deg) translate(-13px, 14px);
+}
+
+.toggle .line:nth-child(2) {
+    opacity: 0;
+}
+
+.toggle .line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
 
 /* section content */
 
@@ -106,40 +191,41 @@ section {
     flex-direction: column;
 }
 
-.content h1 {
-    font-size: 1em;
+.intro h1 {
+    font-size: 15px;
     color: #4eb19e;
 }
 .intro span {
-    font-size: 4em;
+    font-size: 45px;
     margin-left: 20px;
     color: black;
     animation: textColor 2.5s ease forwards;
 }
 
-@keyframes textColor {
-    100% {
-        text-shadow: 2px 2px #4eb19e;
-    }
-}
-
 .content .qoute {
-    font-size: 2em;
+    font-size: 10px;
     color: rgba(255, 255, 255, 0.7);
     animation: fontSize 2s ease forwards;
 }
 
-@keyframes fontSize {
-    100% {
-        font-size: 3em;
-    }
-}
 .moreBtn {
     width: 150px;
     height: 50px;
     font-weight: 400;
     font-size: 20px;
     margin-top: 50px;
+}
+/* animation for span text color  */
+@keyframes textColor {
+    100% {
+        text-shadow: 2px 2px #4eb19e;
+    }
+}
+/* animation for quote front size */
+@keyframes fontSize {
+    100% {
+        font-size: 60px;
+    }
 }
 
 /* about me */
@@ -148,6 +234,10 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.aboutMe {
+    width: 40%;
 }
 
 .aboutContent p,
@@ -171,12 +261,8 @@ section {
     text-indent: 50px;
 }
 
-.aboutMe {
-    width: 40%;
-}
-
 .descTitle {
-    font-size: 2rem;
+    font-size: 30px;
     width: 40%;
     height: 15%;
     color: rgba(255, 255, 255, 1);
@@ -192,8 +278,17 @@ section {
     background-size: 45% 19%;
 }
 
+.skills {
+    display: flex;
+    /* justify-content: space-around; */
+}
+
 .skills ul {
     list-style: none;
+}
+
+.skills ul:nth-child(2) {
+    margin-left: 20%;
 }
 
 .skills li i {
