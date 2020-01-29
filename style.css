@@ -101,6 +101,68 @@ body {
     right: 80%;
 }
 /* when screen width is less or equal to 1024px */
+/* 
+    section
+*/
+
+section {
+    height: 900px;
+    max-height: 1000px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    line-height: 2;
+}
+
+.intro {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.intro h1 {
+    font-size: 20px;
+    color: #4eb19e;
+}
+.intro span {
+    font-size: 70px;
+    color: black;
+    margin-left: 20px;
+    animation: textColor 2.5s ease forwards;
+}
+
+.content .qoute {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    animation: fontSize 2s ease forwards;
+}
+
+.moreBtn {
+    width: 150px;
+    height: 50px;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+/* animation for span text color  */
+@keyframes textColor {
+    100% {
+        text-shadow: 2px 2px #4eb19e;
+    }
+}
+/* animation for quote front size */
+@keyframes fontSize {
+    100% {
+        font-size: 60px;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     #main-nav {
         line-height: 3;
@@ -108,7 +170,13 @@ body {
     .sub-nav {
         width: 50%;
     }
+    @keyframes fontSize {
+        100% {
+            font-size: 40px;
+        }
+    }
 }
+
 /* when screen width is less or equal to 710px */
 
 @media screen and (max-width: 710px) {
@@ -133,9 +201,51 @@ body {
         align-items: center;
         transform: translateX(100%);
     }
-
     .sub-nav li {
         opacity: 0;
+    }
+    .intro {
+        flex-direction: column;
+    }
+    .content .intro > h1 {
+        font-size: 20px;
+        margin-bottom: -25px;
+    }
+    .intro span {
+        font-size: 80px;
+        margin-left: 0;
+    }
+    @keyframes fontSize {
+        100% {
+            font-size: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 415px) {
+    section {
+        height: 700px;
+    }
+    .intro,
+    .qoute {
+        width: 90%;
+    }
+    .intro h1 {
+        font-size: 5px;
+    }
+    .intro span {
+        font-size: 50px;
+    }
+}
+
+@keyframes navLiFade {
+    from {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
     }
 }
 
@@ -168,131 +278,4 @@ body {
 
 .toggle .line:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* section content */
-
-section {
-    height: 800px;
-    max-height: 900px;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    align-items: center;
-    line-height: 2;
-}
-
-.intro {
-    display: flex;
-    flex-direction: column;
-}
-
-.intro h1 {
-    font-size: 15px;
-    color: #4eb19e;
-}
-.intro span {
-    font-size: 45px;
-    margin-left: 20px;
-    color: black;
-    animation: textColor 2.5s ease forwards;
-}
-
-.content .qoute {
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.7);
-    animation: fontSize 2s ease forwards;
-}
-
-.moreBtn {
-    width: 150px;
-    height: 50px;
-    font-weight: 400;
-    font-size: 20px;
-    margin-top: 50px;
-}
-/* animation for span text color  */
-@keyframes textColor {
-    100% {
-        text-shadow: 2px 2px #4eb19e;
-    }
-}
-/* animation for quote front size */
-@keyframes fontSize {
-    100% {
-        font-size: 60px;
-    }
-}
-
-/* about me */
-
-.aboutContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.aboutMe {
-    width: 40%;
-}
-
-.aboutContent p,
-.aboutContent ul {
-    font-size: 20px;
-    color: #636e72;
-}
-
-.aboutContent span {
-    color: #ff6348;
-}
-.aboutContent span a {
-    color: inherit;
-    text-decoration: none;
-}
-.aboutContent span a:visited {
-    color: none;
-}
-
-.aboutContent p {
-    text-indent: 50px;
-}
-
-.descTitle {
-    font-size: 30px;
-    width: 40%;
-    height: 15%;
-    color: rgba(255, 255, 255, 1);
-}
-.descTitle h3 {
-    background-image: linear-gradient(120deg, #4eb19e 100%, #4eb19e 100%);
-    background-repeat: no-repeat;
-    background-size: 60% 19%;
-    background-position: 9px 72%;
-}
-
-#special {
-    background-size: 45% 19%;
-}
-
-.skills {
-    display: flex;
-    /* justify-content: space-around; */
-}
-
-.skills ul {
-    list-style: none;
-}
-
-.skills ul:nth-child(2) {
-    margin-left: 20%;
-}
-
-.skills li i {
-    margin-right: 20px;
-    color: #4eb19e;
-    vertical-align: middle;
 }
