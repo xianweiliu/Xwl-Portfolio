@@ -1,0 +1,163 @@
+/*
+    contains all the responsive styles.
+
+*/
+
+@media screen and (max-width: 1024px) {
+    #main-nav {
+        line-height: 3;
+        .sub-nav {
+            width: 50%;
+        }
+    }
+
+    @keyframes fontSize {
+        100% {
+            font-size: 40px;
+        }
+    }
+}
+
+/* when screen width is less or equal to 710px */
+
+@media screen and (max-width: 710px) {
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+    .sub-nav {
+        position: absolute;
+        right: 0px;
+        height: 30vh;
+        width: 50%;
+        top: 8vh;
+        background-color: #0a1930;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 2px 2px #000;
+        border-radius: 3px;
+        align-items: center;
+        transform: translateX(100%);
+        li {
+            opacity: 0;
+        }
+    }
+    .content {
+        .intro {
+            flex-direction: column;
+            h1 {
+                font-size: 20px;
+                margin-bottom: -25px;
+            }
+            span {
+                font-size: 80px;
+                margin-left: 0;
+            }
+        }
+    }
+
+    @keyframes fontSize {
+        100% {
+            font-size: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 415px) {
+    section {
+        height: 100vh;
+    }
+    .intro,
+    .qoute {
+        width: 80%;
+    }
+    .content {
+        .intro {
+            h1 {
+                font-size: 1em;
+            }
+            span {
+                font-size: 2em;
+            }
+        }
+    }
+
+    .aboutContent {
+        .aboutMe {
+            width: 90vw;
+            height: 90vh;
+            font-size: 0.8em;
+            word-wrap: break-word;
+        }
+        .selfDesc {
+            p {
+                width: 100%;
+            }
+        }
+        .descTitle {
+            h3::after {
+                left: 1.5%;
+                width: 4.5em;
+                top: 40px;
+            }
+        }
+        #special::after {
+            left: 2.2%;
+        }
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .sub-nav {
+        top: 10vh;
+    }
+
+    .aboutContent {
+        .aboutMe {
+            height: 98vh;
+            padding: 20px;
+        }
+    }
+}
+
+@keyframes navLiFade {
+    from {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+.sub-links-fade {
+    animation: navLiFade 0.5s ease forwards;
+}
+
+@keyframes navLiFade {
+    from {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line:nth-child(1) {
+    transform: rotate(-45deg) translate(-13px, 14px);
+}
+
+.toggle .line:nth-child(2) {
+    opacity: 0;
+}
+
+.toggle .line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}

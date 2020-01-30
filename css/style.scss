@@ -1,0 +1,210 @@
+$backgrounColor: rgb(10, 25, 48);
+$stylingColor: #4eb19e;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto Mono", monospace;
+    background-color: $backgrounColor;
+}
+
+.burger {
+    display: none;
+    width: 50px;
+    height: 50px;
+    .line {
+        width: 45px;
+        height: 5px;
+        background-color: $stylingColor;
+        margin: 9px 2px;
+        transition: all 0.3s ease;
+    }
+}
+
+#main-nav {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $backgrounColor;
+    line-height: 2.5;
+    color: #bdc3c7;
+    box-shadow: 2px -8px 25px #000;
+    h2 {
+        color: $stylingColor;
+    }
+}
+
+.sub-nav {
+    list-style: none;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 9px;
+    vertical-align: bottom;
+    li {
+        font-weight: bold;
+        height: 70%;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+}
+
+.animatedBtn {
+    width: 100px;
+    height: 30px;
+    background: none;
+    border: 2px solid;
+    color: #4eb19e;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    outline: none;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        width: 13px;
+        height: 5px;
+        background: #0a1930;
+        transform: skewX(50deg);
+        transition: 0.4s linear;
+    }
+    &::before {
+        top: -4px;
+        left: 10%;
+    }
+    &::after {
+        bottom: -4px;
+        right: 10%;
+    }
+    &:hover::before {
+        left: 80%;
+    }
+    &:hover::after {
+        right: 80%;
+    }
+}
+
+section {
+    height: 100vh;
+    font-size: 18px;
+}
+//  first section
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    line-height: 2;
+    .intro {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        h1 {
+            font-size: 20px;
+            color: #4eb19e;
+        }
+        span {
+            font-size: 70px;
+            color: black;
+            margin-left: 20px;
+            animation: textColor 2.5s ease forwards;
+        }
+    }
+    .qoute {
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.7);
+        animation: fontSize 2s ease forwards;
+    }
+    .moreBtn {
+        width: 150px;
+        height: 50px;
+        font-weight: 400;
+        font-size: 20px;
+        margin-top: 50px;
+    }
+    /* animation for span text color  */
+    @keyframes textColor {
+        100% {
+            text-shadow: 2px 2px #4eb19e;
+        }
+    }
+    /* animation for quote front size */
+    @keyframes fontSize {
+        100% {
+            font-size: 60px;
+        }
+    }
+}
+
+// second section "About Me"
+
+.aboutContent {
+    width: 80vw;
+    height: 100vh;
+    margin: auto;
+
+    .aboutMe {
+        width: 75vw;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 13px 14px 19px #000;
+    }
+
+    .descTitle {
+        color: whitesmoke;
+        font-size: 2em;
+        h3 {
+            position: relative;
+            font-weight: 900;
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 4.3em;
+                height: 13px;
+                top: 52px;
+                left: 1%;
+                background: linear-gradient(90deg, #4ca1af 0%, #c4e0e5 80%);
+                opacity: 0.6;
+            }
+        }
+        #special {
+            &::after {
+                width: 2.1em;
+            }
+        }
+    }
+
+    .selfDesc,
+    .skills {
+        color: $stylingColor;
+        font-size: 1.2em;
+    }
+
+    .selfDesc p {
+        text-indent: 50px;
+    }
+    .skills {
+        display: flex;
+        ul {
+            list-style: none;
+            &:nth-child(2) {
+                margin-left: 20%;
+            }
+        }
+    }
+}
+
+@import "./mobile";
