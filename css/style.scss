@@ -27,7 +27,7 @@ body {
 }
 
 #main-nav {
-    // position: fixed;
+    position: fixed;
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -37,6 +37,7 @@ body {
     line-height: 2.5;
     color: #bdc3c7;
     box-shadow: 2px -8px 25px #000;
+    z-index: 9999;
     h2 {
         color: $stylingColor;
     }
@@ -195,6 +196,11 @@ section {
 
     .selfDesc p {
         text-indent: 50px;
+        span {
+            a {
+                color: rgb(0, 98, 128);
+            }
+        }
     }
     .skills {
         display: flex;
@@ -218,90 +224,68 @@ section {
     }
 }
 .projectWrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    width: 90vw;
     height: 100vh;
-    width: 70vw;
     margin: auto;
+    align-items: center;
+    background-color: $backgrounColor;
+
     .project {
-        position: relative;
-        display: flex;
-        // grid-template-columns: 1fr;
-        height: 45vh;
-        // flex-direction: row;
-        // justify-content: space-between;
-        border-radius: 5px;
-        box-shadow: 1px 1px 19px #000;
-        .colorWrap {
-            position: relative;
-            img {
-                width: 70%;
-                height: 100%;
-                border-radius: 5px;
-                padding: 20px;
-                object-fit: cover;
-            }
-            &::before {
-                content: "";
-                display: block;
-                position: absolute;
-                width: 100%;
-                height: 44vh;
-                bottom: 9px;
-                border-radius: 5px;
-                transition: opacity 1s ease-in;
-                background-color: rgba(78, 177, 158, 0.5);
-            }
-            &:hover::before {
-                opacity: 0;
-            }
-        }
-        p {
-            padding: 10px;
-        }
+        width: 80%;
+        height: 60%;
+        justify-self: center;
+        color: $stylingColor;
         .projDesc {
-            position: absolute;
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
-            align-items: flex-end;
-            width: 40%;
-            height: 100%;
-            color: grey;
-            font-size: 0.9em;
-            right: 50px;
-            // left: 0;
-            h3 {
-                font-size: 1.7em;
-                color: $stylingColor;
-            }
+            justify-content: space-around;
+            padding: 10px;
+            height: 50%;
+            line-height: 1.5;
+            border-radius: 5px;
             p {
-                width: 100%;
-                text-indent: 40px;
-                line-height: 1.5;
-                color: #4eb19e;
-                padding-left: 25px;
-                border-radius: 5px;
-                background-color: $descColor;
+                text-indent: 2em;
             }
-
             ul {
                 display: flex;
-                flex-direction: column;
-                width: 100%;
-                // justify-content: flex-start;
-                align-items: flex-end;
+                justify-content: space-between;
+                width: 50%;
                 list-style: none;
             }
+            a {
+                font-size: 2rem;
+                color: white;
+                &:link {
+                    color: white;
+                }
+                &:visited {
+                    color: none;
+                }
+                &:hover {
+                    color: $stylingColor;
+                }
+            }
         }
-    }
-    #moreList {
-        // background-color: red;
-        width: 58%;
+        .img {
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 5px;
+                // background: red;
+                opacity: 0.8;
+                transform: scale(1);
+                transition: transform 250ms ease-in;
+                &:hover {
+                    transform: scale(1.2);
+                    opacity: 1;
+                }
+            }
+        }
     }
 }
 
 @import "./mobile";
-// project section

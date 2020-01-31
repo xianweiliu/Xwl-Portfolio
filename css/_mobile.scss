@@ -12,7 +12,7 @@
     }
 
     .projectWrap {
-        width: 80vw;
+        width: 100vw;
     }
 
     @keyframes fontSize {
@@ -60,13 +60,20 @@
         }
     }
     .projectWrap {
-        width: 90vw;
-        // .projDesc {
-        //     position: unset;
-        // }
-        // .project {
-        //     flex-direction: column;
-        // }
+        .project {
+            width: 70%;
+            margin-left: -40px;
+        }
+        .projDesc {
+            margin-top: 50px;
+            .off {
+                margin-top: 3em;
+            }
+            ul {
+                margin-top: 1.2em;
+                flex-direction: column;
+            }
+        }
     }
 
     @keyframes fontSize {
@@ -118,6 +125,19 @@
             left: 2.2%;
         }
     }
+
+    .projectWrap {
+        .project {
+            width: 80%;
+            margin-left: -85px;
+        }
+        .projDesc {
+            ul {
+                margin-top: 1.2em;
+                flex-direction: column;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 376px) {
@@ -129,6 +149,19 @@
         .aboutMe {
             height: 80vh;
             padding: 30px;
+        }
+    }
+
+    .projectWrap {
+        .project {
+            width: 70%;
+            margin-left: -120px;
+        }
+        .projDesc {
+            ul {
+                margin-top: 1.2em;
+                flex-direction: column;
+            }
         }
     }
 }

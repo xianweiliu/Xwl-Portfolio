@@ -26,6 +26,7 @@ body {
 }
 
 #main-nav {
+  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,6 +45,7 @@ body {
   color: #bdc3c7;
   -webkit-box-shadow: 2px -8px 25px #000;
           box-shadow: 2px -8px 25px #000;
+  z-index: 9999;
 }
 
 #main-nav h2 {
@@ -259,6 +261,10 @@ section {
   text-indent: 50px;
 }
 
+.aboutContent .selfDesc p span a {
+  color: #006280;
+}
+
 .aboutContent .skills {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -300,71 +306,28 @@ section {
 }
 
 .projectWrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(500px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  width: 90vw;
+  height: 100vh;
+  margin: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
-  width: 70vw;
-  margin: auto;
+  background-color: #0a1930;
 }
 
 .projectWrap .project {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 45vh;
-  border-radius: 5px;
-  -webkit-box-shadow: 1px 1px 19px #000;
-          box-shadow: 1px 1px 19px #000;
-}
-
-.projectWrap .project .colorWrap {
-  position: relative;
-}
-
-.projectWrap .project .colorWrap img {
-  width: 70%;
-  height: 100%;
-  border-radius: 5px;
-  padding: 20px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.projectWrap .project .colorWrap::before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 44vh;
-  bottom: 9px;
-  border-radius: 5px;
-  -webkit-transition: opacity 1s ease-in;
-  transition: opacity 1s ease-in;
-  background-color: rgba(78, 177, 158, 0.5);
-}
-
-.projectWrap .project .colorWrap:hover::before {
-  opacity: 0;
-}
-
-.projectWrap .project p {
-  padding: 10px;
+  width: 80%;
+  height: 60%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  color: #4eb19e;
 }
 
 .projectWrap .project .projDesc {
-  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -372,51 +335,69 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  width: 40%;
-  height: 100%;
-  color: grey;
-  font-size: 0.9em;
-  right: 50px;
-}
-
-.projectWrap .project .projDesc h3 {
-  font-size: 1.7em;
-  color: #4eb19e;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 10px;
+  height: 50%;
+  line-height: 1.5;
+  border-radius: 5px;
 }
 
 .projectWrap .project .projDesc p {
-  width: 100%;
-  text-indent: 40px;
-  line-height: 1.5;
-  color: #4eb19e;
-  padding-left: 25px;
-  border-radius: 5px;
-  background-color: #162a45;
+  text-indent: 2em;
 }
 
 .projectWrap .project .projDesc ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 50%;
   list-style: none;
 }
 
-.projectWrap #moreList {
-  width: 58%;
+.projectWrap .project .projDesc a {
+  font-size: 2rem;
+  color: white;
+}
+
+.projectWrap .project .projDesc a:link {
+  color: white;
+}
+
+.projectWrap .project .projDesc a:visited {
+  color: none;
+}
+
+.projectWrap .project .projDesc a:hover {
+  color: #4eb19e;
+}
+
+.projectWrap .project .img {
+  overflow: hidden;
+}
+
+.projectWrap .project .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  opacity: 0.8;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 250ms ease-in;
+  transition: -webkit-transform 250ms ease-in;
+  transition: transform 250ms ease-in;
+  transition: transform 250ms ease-in, -webkit-transform 250ms ease-in;
+}
+
+.projectWrap .project .img img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 1;
 }
 
 /*
@@ -431,7 +412,7 @@ section {
     width: 50%;
   }
   .projectWrap {
-    width: 80vw;
+    width: 100vw;
   }
   @-webkit-keyframes fontSize {
     100% {
@@ -491,8 +472,22 @@ section {
     font-size: 80px;
     margin-left: 0;
   }
-  .projectWrap {
-    width: 90vw;
+  .projectWrap .project {
+    width: 70%;
+    margin-left: -40px;
+  }
+  .projectWrap .projDesc {
+    margin-top: 50px;
+  }
+  .projectWrap .projDesc .off {
+    margin-top: 3em;
+  }
+  .projectWrap .projDesc ul {
+    margin-top: 1.2em;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   @-webkit-keyframes fontSize {
     100% {
@@ -537,6 +532,17 @@ section {
   .aboutContent #special::after {
     left: 2.2%;
   }
+  .projectWrap .project {
+    width: 80%;
+    margin-left: -85px;
+  }
+  .projectWrap .projDesc ul {
+    margin-top: 1.2em;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 376px) {
@@ -546,6 +552,17 @@ section {
   .aboutContent .aboutMe {
     height: 80vh;
     padding: 30px;
+  }
+  .projectWrap .project {
+    width: 70%;
+    margin-left: -120px;
+  }
+  .projectWrap .projDesc ul {
+    margin-top: 1.2em;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
