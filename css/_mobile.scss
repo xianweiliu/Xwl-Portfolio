@@ -11,6 +11,10 @@
         }
     }
 
+    .projectWrap {
+        width: 80vw;
+    }
+
     @keyframes fontSize {
         100% {
             font-size: 40px;
@@ -54,6 +58,15 @@
                 margin-left: 0;
             }
         }
+    }
+    .projectWrap {
+        width: 90vw;
+        // .projDesc {
+        //     position: unset;
+        // }
+        // .project {
+        //     flex-direction: column;
+        // }
     }
 
     @keyframes fontSize {
@@ -114,8 +127,8 @@
 
     .aboutContent {
         .aboutMe {
-            height: 98vh;
-            padding: 20px;
+            height: 80vh;
+            padding: 30px;
         }
     }
 }

@@ -26,7 +26,6 @@ body {
 }
 
 #main-nav {
-  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -75,6 +74,7 @@ body {
 }
 
 .animatedBtn {
+  position: relative;
   width: 100px;
   height: 30px;
   background: none;
@@ -84,7 +84,6 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   font-size: 14px;
-  position: relative;
   outline: none;
 }
 
@@ -215,11 +214,12 @@ section {
 }
 
 .aboutContent .aboutMe {
-  width: 75vw;
-  padding: 30px;
+  width: 70vw;
+  padding: 60px;
   border-radius: 5px;
   -webkit-box-shadow: 13px 14px 19px #000;
           box-shadow: 13px 14px 19px #000;
+  overflow-x: hidden;
 }
 
 .aboutContent .descTitle {
@@ -273,6 +273,152 @@ section {
   margin-left: 20%;
 }
 
+@-webkit-keyframes textAnim {
+  from {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes textAnim {
+  from {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.projectWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 70vw;
+  margin: auto;
+}
+
+.projectWrap .project {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 45vh;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 19px #000;
+          box-shadow: 1px 1px 19px #000;
+}
+
+.projectWrap .project .colorWrap {
+  position: relative;
+}
+
+.projectWrap .project .colorWrap img {
+  width: 70%;
+  height: 100%;
+  border-radius: 5px;
+  padding: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.projectWrap .project .colorWrap::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 44vh;
+  bottom: 9px;
+  border-radius: 5px;
+  -webkit-transition: opacity 1s ease-in;
+  transition: opacity 1s ease-in;
+  background-color: rgba(78, 177, 158, 0.5);
+}
+
+.projectWrap .project .colorWrap:hover::before {
+  opacity: 0;
+}
+
+.projectWrap .project p {
+  padding: 10px;
+}
+
+.projectWrap .project .projDesc {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 40%;
+  height: 100%;
+  color: grey;
+  font-size: 0.9em;
+  right: 50px;
+}
+
+.projectWrap .project .projDesc h3 {
+  font-size: 1.7em;
+  color: #4eb19e;
+}
+
+.projectWrap .project .projDesc p {
+  width: 100%;
+  text-indent: 40px;
+  line-height: 1.5;
+  color: #4eb19e;
+  padding-left: 25px;
+  border-radius: 5px;
+  background-color: #162a45;
+}
+
+.projectWrap .project .projDesc ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  list-style: none;
+}
+
+.projectWrap #moreList {
+  width: 58%;
+}
+
 /*
     contains all the responsive styles.
 
@@ -283,6 +429,9 @@ section {
   }
   #main-nav .sub-nav {
     width: 50%;
+  }
+  .projectWrap {
+    width: 80vw;
   }
   @-webkit-keyframes fontSize {
     100% {
@@ -342,6 +491,9 @@ section {
     font-size: 80px;
     margin-left: 0;
   }
+  .projectWrap {
+    width: 90vw;
+  }
   @-webkit-keyframes fontSize {
     100% {
       font-size: 25px;
@@ -392,8 +544,8 @@ section {
     top: 10vh;
   }
   .aboutContent .aboutMe {
-    height: 98vh;
-    padding: 20px;
+    height: 80vh;
+    padding: 30px;
   }
 }
 
