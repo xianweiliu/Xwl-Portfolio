@@ -15,7 +15,9 @@
                 <li>Projects</li>
                 <li>About</li>
                 <li>Contact</li>
-                <li><button class="animatedBtn resumeBtn">Resume</button></li>
+                <li>
+                    <button class="animatedBtn resumeBtn">Resume</button>
+                </li>
             </ul>
             <div class="burger">
                 <div class="line"></div>
@@ -23,6 +25,7 @@
                 <div class="line"></div>
             </div>
         </nav>
+
         <section>
             <div class="content">
                 <div class="intro">
@@ -36,12 +39,12 @@
 
         <section>
             <div class="content aboutContent">
-                <div class="aboutMe">
+                <div class="aboutMe anim">
                     <div class="descTitle">
-                        <h3>About Me</h3>
+                        <h3 class="textAnim">About Me</h3>
                     </div>
                     <div class="selfDesc">
-                        <p>
+                        <p class="textAnim">
                             Hello! I am Xianwei, currently graducated from
                             <span
                                 ><a href="https://www.umb.edu/"
@@ -53,17 +56,17 @@
                             looking for
                             <span>Junoir frontend developer position</span>!
                         </p>
-                        <p>
+                        <p class="textAnim">
                             I am passionate about frontend development, wanting
                             to make this become my career!
                         </p>
                     </div>
 
                     <div class="descTitle">
-                        <h3 id="special">Skills</h3>
+                        <h3 id="special" class="textAnim">Skills</h3>
                     </div>
                     <div class="skills">
-                        <ul>
+                        <ul class="textAnim">
                             <li>
                                 <i class="fas fa-hand-point-right"></i>HTML &
                                 CSS
@@ -79,7 +82,7 @@
                                 <i class="fas fa-hand-point-right"></i>Vue.js
                             </li>
                         </ul>
-                        <ul>
+                        <ul class="textAnim">
                             <li>
                                 <i class="fas fa-hand-point-right"></i>Python
                             </li>
@@ -92,6 +95,71 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="projectWrap">
+                <div class="project">
+                    <div class="img">
+                        <a
+                            class="colorWrap"
+                            href="https://github.com/xianweiliu/Timer"
+                            target="_blank"
+                            ><img src="./images/TimerJS.jpg" alt=""
+                        /></a>
+                    </div>
+                    <div class="projDesc">
+                        <h3>Timer</h3>
+                        <p>
+                            A simple timer that takes user's input. It could
+                            start or pause the count down.
+                        </p>
+                        <ul>
+                            <li>Javascript</li>
+                            <li>HTML5/CSS3</li>
+                        </ul>
+                        <a href="#">Github</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="img">
+                        <a
+                            class="colorWrap"
+                            href="https://github.com/xianweiliu/Movie-API"
+                            target="_blank"
+                            ><img src="./images/MovieAPI.jpg" alt=""
+                        /></a>
+                    </div>
+                    <div class="projDesc">
+                        <h3>Movie API</h3>
+                        <p>
+                            A movie comparsion site that can search two
+                            different type of movie and compares stats between
+                            two movies. The winning stats will be highlighted
+                            with green otherwise yellow.
+                        </p>
+                        <ul id="moreList">
+                            <li>Javascript</li>
+                            <li>HTML5/CSS3</li>
+                            <li>Axios</li>
+                            <li>Bulma</li>
+                        </ul>
+                        <a href="#">Github</a>
+                    </div>
+                </div>
+            </div>
+                <!-- <div class="prjectWrap">
+                <div class="project">
+                    <div class="img">
+                        <img src="./images/MovieAPI.jpg" alt="" />
+                    </div>
+                    <div class="projDesc">
+                        <p>
+                            fetch data from OMDb API
+                        </p>
+                    </div>
+                </div>-->
             </div>
         </section>
 
