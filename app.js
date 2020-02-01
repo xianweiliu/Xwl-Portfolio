@@ -16,25 +16,25 @@ const burgerNav = () => {
 };
 burgerNav();
 
-const aboutSec = document.querySelector(".anim");
-const text = document.querySelectorAll(".textAnim");
-const animateStyle = "2s forwards ease-out";
+// const aboutSec = document.querySelector(".anim");
+// const text = document.querySelectorAll(".textAnim");
+// const animateStyle = "2s forwards ease-out";
 
-function observerScreen(elems, animationStyle) {
-    observer = new IntersectionObserver(entries => {
-        entries.forEach((entry, index) => {
-            if (entry.intersectionRatio > 0) {
-                className = entry.target.className;
-                entry.target.style.animation = `${className} ${animationStyle} `;
-            } else {
-                entry.target.style.animation = "none";
-            }
-        });
-    });
+// function observerScreen(elems, animationStyle) {
+//     observer = new IntersectionObserver(entries => {
+//         entries.forEach((entry, index) => {
+//             if (entry.intersectionRatio > 0) {
+//                 className = entry.target.className;
+//                 entry.target.style.animation = `${className} ${animationStyle} `;
+//             } else {
+//                 entry.target.style.animation = "none";
+//             }
+//         });
+//     });
 
-    elems.forEach(elem => {
-        observer.observe(elem);
-    });
-}
-// observerScreen(aboutSec, animateStyle);
-observerScreen(text, animateStyle);
+//     elems.forEach(elem => {
+//         observer.observe(elem);
+//     });
+// }
+
+// observerScreen(text, animateStyle);
