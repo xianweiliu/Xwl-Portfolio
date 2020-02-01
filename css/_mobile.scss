@@ -3,6 +3,35 @@
 
 */
 
+@media screen and (max-width: 1170px) {
+    .main-section {
+        width: 90%;
+    }
+    .project-desc {
+        line-height: 2;
+    }
+}
+
+@media screen and (max-width: 1056px) {
+    .main-section {
+        .main-intro {
+            span {
+                font-size: 3rem;
+            }
+        }
+        @keyframes fontSize {
+            100% {
+                font-size: 2.5rem;
+            }
+        }
+    }
+    .about-content {
+        .about-me,
+        .skill-set {
+            height: 80%;
+        }
+    }
+}
 @media screen and (max-width: 1024px) {
     #main-nav {
         line-height: 3;
@@ -10,25 +39,25 @@
             width: 50%;
         }
     }
+}
 
-    .projectWrap {
-        width: 100vw;
-    }
-
-    @keyframes fontSize {
-        100% {
-            font-size: 40px;
+@media screen and (max-width: 761px) {
+    .main-section {
+        .main-intro {
+            h1 {
+                font-size: 1.23rem;
+            }
+            span {
+                font-size: 4rem;
+            }
+        }
+        @keyframes fontSize {
+            100% {
+                font-size: 2.25rem;
+            }
         }
     }
 }
-@media screen and (max-width: 1170px) {
-    .project-desc {
-        line-height: 2;
-    }
-}
-
-/* when screen width is less or equal to 710px */
-
 @media screen and (max-width: 710px) {
     .burger {
         display: block;
@@ -36,14 +65,14 @@
     }
     .sub-nav {
         position: absolute;
-        right: 0px;
+        right: -10px;
         height: 30vh;
         width: 50%;
         top: 8vh;
-        background-color: #0a1930;
+        background-color: $backgrounColor;
         display: flex;
         flex-direction: column;
-        box-shadow: 0px 2px 2px #000;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.7);
         border-radius: 3px;
         align-items: center;
         transform: translateX(100%);
@@ -51,86 +80,68 @@
             opacity: 0;
         }
     }
-    .content {
-        .intro {
-            flex-direction: column;
-            h1 {
-                font-size: 20px;
-                margin-bottom: -25px;
-            }
-            span {
-                font-size: 80px;
-                margin-left: 0;
-            }
-        }
-    }
-    .projectWrap {
-        .project {
-            width: 70%;
-            margin-left: -40px;
-        }
-        .projDesc {
-            margin-top: 50px;
-            .off {
-                margin-top: 3em;
-            }
-            ul {
-                margin-top: 1.2em;
-                flex-direction: column;
-            }
-        }
-    }
+}
 
-    @keyframes fontSize {
-        100% {
-            font-size: 25px;
+@media screen and (max-width: 376px) {
+    .sub-nav {
+        top: 10.5vh;
+        // right: -3px;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .main-section {
+        // justify-content: flex-start;
+        // background-color: springgreen;
+        align-items: flex-start;
+        .main-intro {
+            display: flex;
+            flex-direction: column;
+            span {
+                margin-left: unset;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 598px) {
+    .about-content {
+        .about-me,
+        .skill-set {
+            height: 90%;
+            width: 100%;
         }
     }
 }
 
 @media screen and (max-width: 415px) {
-    section {
-        height: 100vh;
-        width: 100vw;
+    .sub-nav {
+        top: 9.5vh;
     }
-    .intro,
-    .qoute {
-        width: 80%;
-    }
-    .content {
-        .intro {
-            h1 {
-                font-size: 1em;
-            }
+    // section
+    .main-section {
+        .main-intro {
+            display: flex;
+            flex-direction: column;
             span {
-                font-size: 2em;
+                font-size: 3rem;
             }
         }
     }
 
-    .aboutContent {
-        .aboutMe {
+    // about
+    .about-content {
+        width: 90%;
+        grid-row-gap: 2rem;
+        .about-me,
+        .skill-set {
+            margin: 0;
             width: 100%;
-            height: 100vh;
-            font-size: 0.8em;
-            word-wrap: break-word;
-        }
-        .selfDesc {
-            p {
-                width: 100%;
-            }
-        }
-        .descTitle {
-            h3::after {
-                left: 1.5%;
-                width: 4.5em;
-                top: 40px;
-            }
-        }
-        #special::after {
-            left: 2.2%;
+            height: 100%;
         }
     }
+
+    // projects
     .project-grid {
         width: 100%;
         .project-items {
@@ -146,19 +157,6 @@
                     margin-bottom: 10px;
                 }
             }
-        }
-    }
-}
-
-@media screen and (max-width: 376px) {
-    .sub-nav {
-        top: 10vh;
-    }
-
-    .aboutContent {
-        .aboutMe {
-            height: 80vh;
-            padding: 30px;
         }
     }
 }

@@ -1,16 +1,23 @@
 $backgrounColor: rgb(10, 25, 48);
 $stylingColor: rgb(78, 177, 158);
 $descColor: #162a45;
+$greyClr: #757f9a;
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    font-family: "Roboto Mono", monospace;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1fr, 1r));
+    grid-row-gap: 5rem;
     background-color: $backgrounColor;
+    // overflow: hidden;
 }
 
 .burger {
@@ -39,7 +46,10 @@ body {
     box-shadow: 2px -8px 25px #000;
     z-index: 9999;
     h2 {
-        color: $stylingColor;
+        a {
+            color: $stylingColor;
+            text-decoration: none;
+        }
     }
 }
 
@@ -52,11 +62,24 @@ body {
     padding-top: 9px;
     vertical-align: bottom;
     li {
-        font-weight: bold;
-        height: 70%;
+        font-weight: 500;
+        height: 100%;
         text-transform: uppercase;
-        cursor: pointer;
+        a {
+            color: $greyClr;
+            text-decoration: none;
+            transition: color 250ms ease-in;
+            &:hover {
+                color: $stylingColor;
+            }
+        }
     }
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
 .animatedBtn {
@@ -65,7 +88,7 @@ body {
     height: 30px;
     background: none;
     border: 2px solid;
-    color: #4eb19e;
+    color: $greyClr;
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
@@ -95,39 +118,40 @@ body {
     &:hover::after {
         right: 80%;
     }
+    &:hover {
+        color: $stylingColor;
+    }
 }
 
-section {
-    height: 100vh;
-    font-size: 18px;
-}
-//  first section
-.content {
+// main section
+
+.main-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100vh;
     align-items: center;
     line-height: 2;
-    .intro {
+    // background-color: springgreen;
+    .main-intro {
         display: flex;
         flex-direction: row;
         align-items: baseline;
         h1 {
-            font-size: 20px;
+            // font-size: 20px;
             color: #4eb19e;
         }
         span {
-            font-size: 70px;
+            font-size: 5rem;
             color: black;
             margin-left: 20px;
-            animation: textColor 2.5s ease forwards;
+            animation: textColor 2.5s ease-in forwards;
         }
     }
-    .qoute {
-        font-size: 10px;
+    .main-qoute {
+        // font-size: 10px;
         color: rgba(255, 255, 255, 0.7);
-        animation: fontSize 2s ease forwards;
+        animation: fontSize 2s ease-in-out forwards;
     }
     .moreBtn {
         width: 150px;
@@ -145,88 +169,91 @@ section {
     /* animation for quote front size */
     @keyframes fontSize {
         100% {
-            font-size: 60px;
+            font-size: 3.5rem;
         }
     }
 }
 
-// second section "About Me"
+// about me
 
-.aboutContent {
-    width: 80vw;
-    height: 100vh;
-    margin: auto;
-    .aboutMe {
-        width: 70vw;
-        padding: 60px;
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-column-gap: 2rem;
+    align-items: center;
+    width: 80%;
+
+    .about-me,
+    .skill-set {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 10px;
+        font-size: 1.3rem;
+        background-color: $descColor;
         border-radius: 5px;
-        box-shadow: 13px 14px 19px #000;
-        overflow-x: hidden;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
     }
-    .descTitle {
-        color: whitesmoke;
-        font-size: 2em;
-        h3 {
-            position: relative;
-            font-weight: 900;
-            &::after {
-                content: "";
-                display: block;
-                position: absolute;
-                width: 4.3em;
-                height: 13px;
-                top: 52px;
-                left: 1%;
-                background: linear-gradient(90deg, #4ca1af 0%, #c4e0e5 80%);
-                opacity: 0.6;
+
+    .about-me {
+        .self-desc {
+            flex-direction: column;
+            p {
+                text-indent: 2.25rem;
+                line-height: 1.5;
             }
-        }
-        #special {
-            &::after {
-                width: 2.1em;
+            a,
+            span {
+                color: $stylingColor;
+                text-decoration: none;
+                font-size: 1.4rem;
             }
         }
     }
 
-    .selfDesc,
-    .skills {
+    .title {
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
         color: $stylingColor;
-        font-size: 1.2em;
+        background: $backgrounColor;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+    .skill-set {
+        padding: 10px;
     }
 
-    .selfDesc p {
-        text-indent: 50px;
-        span {
-            a {
-                color: rgb(0, 98, 128);
-            }
-        }
-    }
+    .self-desc,
     .skills {
         display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        padding: 15px;
+        color: $greyClr;
+        background-color: $backgrounColor;
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+    }
+    .skills {
+        align-items: center;
         ul {
             list-style: none;
-            &:nth-child(2) {
-                margin-left: 20%;
-            }
+            line-height: 2;
         }
     }
 }
 
-@keyframes textAnim {
-    from {
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
+// proejct section
 .project-grid {
     display: grid;
     grid-template-columns: 1fr;
-    // grid-column-gap: 2rem;
+
     grid-row-gap: 5rem;
     margin: auto;
     width: 80%;
@@ -235,11 +262,12 @@ section {
     .project-items {
         display: grid;
         margin: auto;
+        // width: 100%;
         height: 100%;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         grid-column-gap: 4rem;
         align-items: center;
-        padding: 2rem;
+        padding: 1.25rem;
         box-shadow: 2px 2px 20px #000;
         border-radius: 5px;
         .project-img {
@@ -284,6 +312,14 @@ section {
                 list-style: none;
                 li {
                     text-transform: uppercase;
+                    color: $stylingColor;
+                }
+            }
+            a {
+                color: $greyClr;
+                font-size: 2rem;
+                transition: color 250ms ease-in-out;
+                &:hover {
                     color: $stylingColor;
                 }
             }
