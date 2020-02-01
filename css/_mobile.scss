@@ -21,6 +21,11 @@
         }
     }
 }
+@media screen and (max-width: 1170px) {
+    .project-desc {
+        line-height: 2;
+    }
+}
 
 /* when screen width is less or equal to 710px */
 
@@ -86,6 +91,7 @@
 @media screen and (max-width: 415px) {
     section {
         height: 100vh;
+        width: 100vw;
     }
     .intro,
     .qoute {
@@ -104,8 +110,8 @@
 
     .aboutContent {
         .aboutMe {
-            width: 90vw;
-            height: 90vh;
+            width: 100%;
+            height: 100vh;
             font-size: 0.8em;
             word-wrap: break-word;
         }
@@ -125,16 +131,20 @@
             left: 2.2%;
         }
     }
-
-    .projectWrap {
-        .project {
-            width: 80%;
-            margin-left: -85px;
-        }
-        .projDesc {
-            ul {
-                margin-top: 1.2em;
-                flex-direction: column;
+    .project-grid {
+        width: 100%;
+        .project-items {
+            width: 90%;
+            .project-img {
+                img {
+                    width: 90%;
+                }
+            }
+            .project-desc {
+                p {
+                    width: 90%;
+                    margin-bottom: 10px;
+                }
             }
         }
     }
@@ -149,19 +159,6 @@
         .aboutMe {
             height: 80vh;
             padding: 30px;
-        }
-    }
-
-    .projectWrap {
-        .project {
-            width: 70%;
-            margin-left: -120px;
-        }
-        .projDesc {
-            ul {
-                margin-top: 1.2em;
-                flex-direction: column;
-            }
         }
     }
 }
