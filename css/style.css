@@ -95,7 +95,6 @@ body {
 }
 
 section {
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -235,6 +234,10 @@ section {
   }
 }
 
+#about-sec {
+  height: 100vh;
+}
+
 .about-content {
   display: -ms-grid;
   display: grid;
@@ -344,10 +347,11 @@ section {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
+  -ms-grid-rows: minmax(400px, auto);
+      grid-template-rows: minmax(400px, auto);
   grid-row-gap: 5rem;
   margin: auto;
   width: 80%;
-  height: 100vh;
 }
 
 .project-grid .project-items {
@@ -442,6 +446,72 @@ section {
 }
 
 .project-grid .project-items .project-desc a:hover {
+  color: #4eb19e;
+}
+
+.contact {
+  height: 100vh;
+  margin-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #757f9a;
+  line-height: 3;
+  font-size: 1.3rem;
+}
+
+.contact h2 {
+  font-size: 3rem;
+  color: #4eb19e;
+}
+
+.contact .contact-desc {
+  width: 70%;
+}
+
+.contact .contact-desc p:nth-child(2) {
+  text-indent: 3rem;
+}
+
+.contact .contact-desc p:nth-child(2) a {
+  color: #4eb19e;
+  text-decoration: none;
+  -webkit-transition: border-bottom 250ms ease-in-out;
+  transition: border-bottom 250ms ease-in-out;
+  font-size: 1.3rem;
+}
+
+.contact .contact-desc p:nth-child(2) a:hover {
+  border-bottom: 2px solid #4eb19e;
+}
+
+footer {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #0a1930;
+  -webkit-box-shadow: 2px 2px 18px #000;
+          box-shadow: 2px 2px 18px #000;
+}
+
+footer h3 {
   color: #4eb19e;
 }
 
