@@ -48,7 +48,7 @@ const animateObs = (obsElem, addClassElem, className, marginVal = "0px") => {
     navObs.observe(obsElem);
 };
 
-animateObs(mainSec, mainNav, "nav-change", "-90% 0px 0px 0px");
+animateObs(mainSec, mainNav, "nav-change", "-95% 0px 0px 0px");
 animateObs(mainSec, myName, "text-shadow");
 
 animateObs(mainSec, qoute, "text-size");

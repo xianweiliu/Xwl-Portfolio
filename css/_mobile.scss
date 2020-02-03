@@ -81,8 +81,7 @@
 
 @media screen and (max-width: 670px) {
     .main-section {
-        // justify-content: flex-start;
-        // background-color: springgreen;
+        width: 80%;
         align-items: flex-start;
         .main-intro {
             display: flex;

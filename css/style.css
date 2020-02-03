@@ -578,6 +578,7 @@ footer h3 {
 
 @media screen and (max-width: 670px) {
   .main-section {
+    width: 80%;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
