@@ -370,19 +370,11 @@ section {
   width: 100%;
   background-color: #4eb19e;
   opacity: 0.8;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: -webkit-transform 250ms ease-in;
-  transition: -webkit-transform 250ms ease-in;
-  transition: transform 250ms ease-in;
-  transition: transform 250ms ease-in, -webkit-transform 250ms ease-in;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -webkit-transition: opacity 250ms ease-in;
+  transition: opacity 250ms ease-in;
 }
 
 .project-grid .project-items .project-img img:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
   opacity: 1;
 }
 
@@ -584,16 +576,6 @@ footer h3 {
   }
 }
 
-@media screen and (max-width: 376px) {
-  .sub-nav {
-    top: 10.5vh;
-  }
-  .main-section {
-    width: 80%;
-    height: 110vh;
-  }
-}
-
 @media screen and (max-width: 670px) {
   .main-section {
     -webkit-box-align: start;
@@ -663,16 +645,13 @@ footer h3 {
   }
 }
 
-@media screen and (max-width: 321px) {
+@media screen and (max-width: 376px) {
   .sub-nav {
-    top: 12.5vh;
-    height: auto;
-  }
-  #about-sec {
-    height: auto;
+    top: 8.5vh;
   }
   .main-section {
-    height: 140vh;
+    width: 80%;
+    height: 100vh;
   }
 }
 

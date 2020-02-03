@@ -164,9 +164,7 @@ section {
     }
 
     .main-qoute {
-        // font-size: 10px;
         color: rgba(255, 255, 255, 0.7);
-        // animation: fontSize 2s ease-in-out forwards;
     }
     .moreBtn {
         width: 150px;
@@ -175,18 +173,6 @@ section {
         font-size: 20px;
         margin-top: 50px;
     }
-    // /* animation for span text color  */
-    // @keyframes textColor {
-    //     100% {
-    //         text-shadow: 2px 2px #4eb19e;
-    //     }
-    // }
-    // /* animation for quote front size */
-    // @keyframes fontSize {
-    //     100% {
-    //         font-size: 3.5rem;
-    //     }
-    // }
 }
 
 // about me
@@ -298,11 +284,8 @@ section {
                 width: 100%;
                 background-color: $stylingColor;
                 opacity: 0.8;
-                transform: scale(1);
-                transition: transform 250ms ease-in;
-                object-fit: cover;
+                transition: opacity 250ms ease-in;
                 &:hover {
-                    transform: scale(1.2);
                     opacity: 1;
                 }
             }
