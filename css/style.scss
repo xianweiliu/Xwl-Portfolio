@@ -35,21 +35,28 @@ body {
 #main-nav {
     position: fixed;
     display: flex;
-    width: 100%;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: $backgrounColor;
-    line-height: 2.5;
     color: #bdc3c7;
-    box-shadow: 2px -8px 25px #000;
+    width: 100%;
+    line-height: 2.5;
+    background-color: $backgrounColor;
+    // box-shadow: 0px 0px 0px;
+    // transition: box-shadow 250ms ease-in-out;
     z-index: 9999;
+
     h2 {
         a {
             color: $stylingColor;
             text-decoration: none;
         }
     }
+}
+
+.nav-change {
+    box-shadow: 2px -8px 25px #000;
+    transition: box-shadow 350ms ease-in-out;
 }
 
 .sub-nav {
@@ -131,26 +138,35 @@ section {
     height: 100vh;
     align-items: center;
     line-height: 2;
-    // background-color: springgreen;
     .main-intro {
         display: flex;
         flex-direction: row;
         align-items: baseline;
         h1 {
-            // font-size: 20px;
             color: #4eb19e;
         }
         span {
             font-size: 5rem;
             color: black;
             margin-left: 20px;
-            animation: textColor 2.5s ease-in forwards;
+
+            // animation: textColor 2.5s ease-in forwards;
         }
     }
+
+    .text-shadow {
+        text-shadow: 2px 2px #4eb19e;
+        transition: text-shadow 2s ease-in;
+    }
+    .text-size {
+        font-size: 3.5rem;
+        transition: font-size 2s ease-in-out;
+    }
+
     .main-qoute {
         // font-size: 10px;
         color: rgba(255, 255, 255, 0.7);
-        animation: fontSize 2s ease-in-out forwards;
+        // animation: fontSize 2s ease-in-out forwards;
     }
     .moreBtn {
         width: 150px;
@@ -159,18 +175,18 @@ section {
         font-size: 20px;
         margin-top: 50px;
     }
-    /* animation for span text color  */
-    @keyframes textColor {
-        100% {
-            text-shadow: 2px 2px #4eb19e;
-        }
-    }
-    /* animation for quote front size */
-    @keyframes fontSize {
-        100% {
-            font-size: 3.5rem;
-        }
-    }
+    // /* animation for span text color  */
+    // @keyframes textColor {
+    //     100% {
+    //         text-shadow: 2px 2px #4eb19e;
+    //     }
+    // }
+    // /* animation for quote front size */
+    // @keyframes fontSize {
+    //     100% {
+    //         font-size: 3.5rem;
+    //     }
+    // }
 }
 
 // about me

@@ -38,7 +38,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -48,17 +47,25 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #0a1930;
-  line-height: 2.5;
   color: #bdc3c7;
-  -webkit-box-shadow: 2px -8px 25px #000;
-          box-shadow: 2px -8px 25px #000;
+  width: 100%;
+  line-height: 2.5;
+  background-color: #0a1930;
   z-index: 9999;
 }
 
 #main-nav h2 a {
   color: #4eb19e;
   text-decoration: none;
+}
+
+.nav-change {
+  -webkit-box-shadow: 2px -8px 25px #000;
+          box-shadow: 2px -8px 25px #000;
+  -webkit-transition: -webkit-box-shadow 350ms ease-in-out;
+  transition: -webkit-box-shadow 350ms ease-in-out;
+  transition: box-shadow 350ms ease-in-out;
+  transition: box-shadow 350ms ease-in-out, -webkit-box-shadow 350ms ease-in-out;
 }
 
 .sub-nav {
@@ -167,8 +174,6 @@ section {
       -ms-flex-align: center;
           align-items: center;
   line-height: 2;
-  /* animation for span text color  */
-  /* animation for quote front size */
 }
 
 .main-section .main-intro {
@@ -192,14 +197,22 @@ section {
   font-size: 5rem;
   color: black;
   margin-left: 20px;
-  -webkit-animation: textColor 2.5s ease-in forwards;
-          animation: textColor 2.5s ease-in forwards;
+}
+
+.main-section .text-shadow {
+  text-shadow: 2px 2px #4eb19e;
+  -webkit-transition: text-shadow 2s ease-in;
+  transition: text-shadow 2s ease-in;
+}
+
+.main-section .text-size {
+  font-size: 3.5rem;
+  -webkit-transition: font-size 2s ease-in-out;
+  transition: font-size 2s ease-in-out;
 }
 
 .main-section .main-qoute {
   color: rgba(255, 255, 255, 0.7);
-  -webkit-animation: fontSize 2s ease-in-out forwards;
-          animation: fontSize 2s ease-in-out forwards;
 }
 
 .main-section .moreBtn {
@@ -208,30 +221,6 @@ section {
   font-weight: 400;
   font-size: 20px;
   margin-top: 50px;
-}
-
-@-webkit-keyframes textColor {
-  100% {
-    text-shadow: 2px 2px #4eb19e;
-  }
-}
-
-@keyframes textColor {
-  100% {
-    text-shadow: 2px 2px #4eb19e;
-  }
-}
-
-@-webkit-keyframes fontSize {
-  100% {
-    font-size: 3.5rem;
-  }
-}
-
-@keyframes fontSize {
-  100% {
-    font-size: 3.5rem;
-  }
 }
 
 #about-sec {
@@ -532,15 +521,8 @@ footer h3 {
   .main-section .main-intro span {
     font-size: 3rem;
   }
-  @-webkit-keyframes fontSize {
-    100% {
-      font-size: 2.5rem;
-    }
-  }
-  @keyframes fontSize {
-    100% {
-      font-size: 2.5rem;
-    }
+  .main-section .text-size {
+    font-size: 2.5rem;
   }
   .about-content .about-me,
   .about-content .skill-set {
@@ -564,15 +546,8 @@ footer h3 {
   .main-section .main-intro span {
     font-size: 4rem;
   }
-  @-webkit-keyframes fontSize {
-    100% {
-      font-size: 2.25rem;
-    }
-  }
-  @keyframes fontSize {
-    100% {
-      font-size: 2.25rem;
-    }
+  .main-section .text-size {
+    font-size: 2rem;
   }
 }
 
@@ -613,6 +588,10 @@ footer h3 {
   .sub-nav {
     top: 10.5vh;
   }
+  .main-section {
+    width: 80%;
+    height: 110vh;
+  }
 }
 
 @media screen and (max-width: 670px) {
@@ -645,7 +624,7 @@ footer h3 {
 
 @media screen and (max-width: 415px) {
   .sub-nav {
-    top: 9.5vh;
+    top: 8.5vh;
   }
   .main-section .main-intro {
     display: -webkit-box;
@@ -681,6 +660,19 @@ footer h3 {
   .project-grid .project-items .project-desc p {
     width: 90%;
     margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .sub-nav {
+    top: 12.5vh;
+    height: auto;
+  }
+  #about-sec {
+    height: auto;
+  }
+  .main-section {
+    height: 140vh;
   }
 }
 
