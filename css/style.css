@@ -207,8 +207,11 @@ section {
 
 .main-section .text-size {
   font-size: 3.5rem;
-  -webkit-transition: font-size 2s ease-in-out;
   transition: font-size 2s ease-in-out;
+  -webkit-transition: font-size 2s ease-in-out;
+  -moz-transition: font-size 2s ease-in-out;
+  -ms-transition: font-size 2s ease-in-out;
+  -o-transition: font-size 2s ease-in-out;
 }
 
 .main-section .main-qoute {
