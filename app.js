@@ -16,25 +16,39 @@ const burgerNav = () => {
 };
 burgerNav();
 
-// const aboutSec = document.querySelector(".anim");
-// const text = document.querySelectorAll(".textAnim");
-// const animateStyle = "2s forwards ease-out";
+const mainNav = document.querySelector("#main-nav");
+const mainSec = document.querySelector("#main-sec");
+const myName = document.querySelector(".main-intro span");
+const qoute = document.querySelector(".main-qoute");
 
-// function observerScreen(elems, animationStyle) {
-//     observer = new IntersectionObserver(entries => {
-//         entries.forEach((entry, index) => {
-//             if (entry.intersectionRatio > 0) {
-//                 className = entry.target.className;
-//                 entry.target.style.animation = `${className} ${animationStyle} `;
-//             } else {
-//                 entry.target.style.animation = "none";
-//             }
-//         });
-//     });
+const animateObs = (obsElem, addClassElem, className, marginVal = "0px") => {
+    const navObs = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (addClassElem === mainNav) {
+                    if (entry.isIntersecting) {
+                        addClassElem.classList.remove(className);
+                    } else {
+                        addClassElem.classList.add(className);
+                    }
+                } else {
+                    if (entry.isIntersecting) {
+                        addClassElem.classList.add(className);
+                    } else {
+                        addClassElem.classList.remove(className);
+                    }
+                }
+            });
+        },
+        {
+            rootMargin: marginVal,
+        },
+    );
 
-//     elems.forEach(elem => {
-//         observer.observe(elem);
-//     });
-// }
+    navObs.observe(obsElem);
+};
 
-// observerScreen(text, animateStyle);
+animateObs(mainSec, mainNav, "nav-change", "-90% 0px 0px 0px");
+animateObs(mainSec, myName, "text-shadow");
+
+animateObs(mainSec, qoute, "text-size");
